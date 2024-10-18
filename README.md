@@ -1,37 +1,36 @@
-# Game Hub - Open Source Gaming Platform
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Overview
+## Getting Started
 
-**Game Hub** is an open-source platform where users can explore and play various browser-based games. The platform focuses on a seamless gaming experience, with the ability to interact with other players through different features. Built with **Next.js**, **Prisma** (using MySQL), **Framer Motion**, and **Tailwind CSS**, Game Hub ensures smooth gameplay and modern design.
+First, run the development server:
 
-The project is still under development, and aims to allow developers to easily integrate their own games, while offering a space for community interaction.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Features
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- User authentication (Google, GitHub, etc.)
-- Modular game integration
-- User profiles
-- Smooth animations with **Framer Motion**
-- Open-source with contributions encouraged
-- Future marketplace for game developers
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Technologies
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- **Next.js** - React framework for building the app
-- **Prisma** - ORM to manage MySQL database
-- **MySQL** - Database for storing user data and game-related information
-- **NextAuth.js** - Authentication system
-- **Shadcn** - Reusable TSX components for enhanced UI
-- **Framer Motion** - Animation library for smooth transitions and effects
-- **Tailwind CSS** - Utility-first CSS framework
+## Learn More
 
-## Contributing
+To learn more about Next.js, take a look at the following resources:
 
-We are open to contributions from the community to help build **Game Hub** into a leading open-source gaming platform. If you're interested in contributing, feel free to fork the repository, submit pull requests, and share your ideas. We're particularly looking for contributions in the following areas:
-- New game integrations
-- UI/UX improvements
-- Platform optimizations
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## Game Marketplace (Future Feature)
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-In the future, **Game Hub** will feature a marketplace where developers can submit and sell their browser-based games. Stay tuned for updates on how you can monetize your game through the platform and engage with a broader community of gamers.
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
