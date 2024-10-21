@@ -32,19 +32,19 @@ const Main: React.FC = () => {
   }, [scrollY]);
 
   return (
-    <main className="relative bg-white dark:bg-gray-900">
+    <main className="relative bg-white dark:bg-gray-900 transition-colors duration-300">
       {/* Section Hero */}
-      <section className="relative h-screen flex items-center justify-center bg-white">
+      <section className="relative h-screen flex items-center justify-center bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-6 z-10">
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-black text-center">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-black dark:text-white text-center">
               Welcome to <span className="text-orange-500">GameHub</span>
             </h1>
-            <p className="mt-4 text-xl text-gray-700 text-center">
+            <p className="mt-4 text-xl text-gray-700 dark:text-gray-300 text-center">
               The open-source gaming community where creativity meets collaboration.
             </p>
             <motion.div
@@ -64,7 +64,7 @@ const Main: React.FC = () => {
         </div>
       </section>
 
-      <Separator className="my-10" />
+      <Separator/>
 
       {/* Section Features */}
       <section className="relative py-20 bg-white dark:bg-gray-900">
@@ -104,7 +104,7 @@ const Main: React.FC = () => {
         </motion.div>
       </section>
 
-      <Separator className="my-10" />
+      <Separator/>
 
       {/* Section Most Popular Games */}
       <section className="py-20 bg-white dark:bg-gray-900">
@@ -133,7 +133,7 @@ const Main: React.FC = () => {
       {/* Section FAQ */}
       <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto">
-          <FAQAccordion faqs={faqs} /> {/* Utiliser le composant FAQAccordion ici */}
+          <FAQAccordion faqs={faqs} />
         </div>
       </section>
 
@@ -147,8 +147,7 @@ const Main: React.FC = () => {
           You've been idle for a while. Explore more!
         </motion.div>
       )}
-        <Separator className="my-10" />
-
+      <Separator />
     </main>
   );
 };
@@ -158,13 +157,11 @@ const popularGames = [
   { title: "Game 1", description: "Description of Game 1", link: "#", previewImage: "link_to_image_1" },
   { title: "Game 2", description: "Description of Game 2", link: "#", previewImage: "link_to_image_2" },
   { title: "Game 3", description: "Description of Game 3", link: "#", previewImage: "link_to_image_3" },
-  // Ajoute plus de jeux ici
 ];
 
 const faqs = [
   { question: "What is GameHub?", answer: "GameHub is a community-driven platform for gamers." },
   { question: "How can I contribute?", answer: "You can contribute by sharing your games and collaborating with others." },
-  // Ajoute plus de questions ici
 ];
 
 export default Main;
