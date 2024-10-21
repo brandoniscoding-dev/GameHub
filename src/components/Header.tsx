@@ -82,7 +82,7 @@ const Header = ({ isAuthenticated, user }: { isAuthenticated: boolean; user?: { 
   return (
     <>
       <motion.nav
-        className={`fixed top-0 w-full z-50 bg-white ${isScrolled ? "shadow-lg" : "shadow-none"} transition-shadow duration-500`}
+        className={`fixed top-0 w-full z-50 bg-transparent ${isScrolled ? "shadow-lg" : "shadow-none"} transition-shadow duration-500`}
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: -100, opacity: 0 }}
