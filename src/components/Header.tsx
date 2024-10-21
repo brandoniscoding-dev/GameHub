@@ -1,10 +1,8 @@
-// components/Header.tsx
-
 'use client'; // Ligne ajoutée pour le rendu côté client
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { HiMenu, HiSun, HiMoon } from "react-icons/hi"; // Importation des icônes
+import { HiMenu } from "react-icons/hi"; // Importation des icônes
 import { BiGame, BiUser, BiHomeCircle } from "react-icons/bi"; 
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
@@ -23,36 +21,26 @@ const NavLink = ({ href, children, icon }: NavLinkProps) => {
   return (
     <motion.a
       href={href}
-      className="flex items-center gap-2 text-black dark:text-white relative group text-lg font-semibold tracking-wider"
+      className="flex items-center gap-2 relative group text-lg font-semibold tracking-wider transition-colors duration-300"
       whileHover={{ scale: 1.1, color: "#FFA500" }}  
       whileTap={{ scale: 0.95 }}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: "easeInOut" }}
+      style={{ color: "inherit" }} // Permet de prendre la couleur héritée du parent
     >
       {icon}
       {children}
       <span className="absolute left-0 -bottom-0.5 w-full h-0.5 bg-orange-500 transition-all duration-300 scale-x-0 group-hover:scale-x-100" />
     </motion.a>
   );
-};
-
-
-
-
+}
 
 const Header = ({ isAuthenticated, user }: { isAuthenticated: boolean; user?: { name: string; avatarUrl: string } }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   useEffect(() => {
-    // Récupérer la préférence de thème de localStorage
-    const storedTheme = localStorage.getItem("theme");
-    if (storedTheme) {
-      setIsDarkMode(storedTheme === "dark");
-      document.documentElement.classList.toggle("dark", storedTheme === "dark");
-    }
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
@@ -61,6 +49,14 @@ const Header = ({ isAuthenticated, user }: { isAuthenticated: boolean; user?: { 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setIsDarkMode(storedTheme === "dark");
+      document.documentElement.classList.toggle("dark", storedTheme === "dark");
+    }
   }, []);
 
   const toggleTheme = () => {
@@ -73,7 +69,7 @@ const Header = ({ isAuthenticated, user }: { isAuthenticated: boolean; user?: { 
   return (
     <>
       <motion.nav
-        className={`fixed top-0 w-full z-50 bg-transparent ${isScrolled ? "shadow-lg" : "shadow-none"} transition-shadow duration-500`}
+        className={`fixed top-0 w-full z-50 bg-transparent backdrop-blur-lg ${isScrolled ? "shadow-lg" : "shadow-none"} transition-shadow duration-500`}
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: -100, opacity: 0 }}
@@ -90,14 +86,14 @@ const Header = ({ isAuthenticated, user }: { isAuthenticated: boolean; user?: { 
           </motion.div>
 
           {/* Menu desktop */}
-          <div className="hidden md:flex space-x-10 items-center">
+          <div className="hidden md:flex space-x-10 items-center ml-auto">
             {!isAuthenticated && (
               <>
                 <NavLink href="/home" icon={<BiHomeCircle />}>Home</NavLink>
                 <NavLink href="/about" icon={<BiUser />}>About</NavLink>
                 <NavLink href="/games" icon={<BiGame />}>Games</NavLink>
                 <NavLink href="/features">Features</NavLink>
-                <JoinNowButton/>
+                <JoinNowButton />
               </>
             )}
             {isAuthenticated && user && (
@@ -109,11 +105,6 @@ const Header = ({ isAuthenticated, user }: { isAuthenticated: boolean; user?: { 
               </>
             )}
           </div>
-
-          {/* Icône pour basculer le thème */}
-          <button onClick={toggleTheme} className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 ml-4 md:ml-6">
-            {isDarkMode ? <HiSun className="text-yellow-500" size={24} /> : <HiMoon className="text-gray-800" size={24} />}
-          </button>
 
           {/* Menu mobile */}
           <div className="md:hidden">
@@ -145,10 +136,6 @@ const Header = ({ isAuthenticated, user }: { isAuthenticated: boolean; user?: { 
                       <NavLink href="/profile" icon={<BiUser />}>Profile</NavLink>
                     </>
                   )}
-                  {/* Icône pour basculer le thème mobile */}
-                  <button onClick={toggleTheme} className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 mt-4">
-                    {isDarkMode ? <HiSun className="text-yellow-500" size={24} /> : <HiMoon className="text-gray-800" size={24} />}
-                  </button>
                 </div>
               </SheetContent>
             </Sheet>
