@@ -4,6 +4,8 @@ import Image from "next/image";
 import { FaGithub, FaTwitter } from "react-icons/fa"; // Icônes pour les réseaux sociaux
 import ThemeToggle from "../ThemeToggle";
 import { motion } from 'framer-motion'; // Import de Framer Motion
+import src from '../../public/img/gamehub.svg';
+
 
 const Footer = () => {
   return (
@@ -23,7 +25,7 @@ const Footer = () => {
             animate={{ opacity: 1, x: 0 }} 
             transition={{ delay: 0.2 }}
           >
-            <Image src="/gamehub_logo.svg" alt="GameHub Logo" width={150} height={100} />
+            <Image src= {src} alt="GameHub Logo" width={250} height={200} />
             <p className="text-gray-600 dark:text-gray-400 mt-2">GameHub &copy; 2024</p>
           </motion.div>
 
@@ -35,9 +37,8 @@ const Footer = () => {
           >
             <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-4">Ressources</h3>
             <ul className="space-y-2">
-              <li><a href="/docs" className="text-blue-600 hover:underline">Docs</a></li>
-              <li><a href="/blog" className="text-blue-600 hover:underline">Blog</a></li>
-              <li><a href="/showcase" className="text-blue-600 hover:underline">Showcase</a></li>
+              <li><a href="/Games" className="text-orange-600 hover:underline">DGame</a></li>
+              <li><a href="/blog" className="text-orange-600 hover:underline">Blog</a></li>
             </ul>
           </motion.div>
 
@@ -50,12 +51,12 @@ const Footer = () => {
             <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-4">Communauté</h3>
             <ul className="space-y-2">
               <li>
-                <a href="https://github.com/GameHub" className="flex items-center space-x-2 text-blue-600 hover:underline">
+                <a href="https://github.com/GameHub" className="flex items-center space-x-2 text-orange-600 hover:underline">
                   <FaGithub /> <span>GitHub</span>
                 </a>
               </li>
               <li>
-                <a href="https://twitter.com/GameHub" className="flex items-center space-x-2 text-blue-600 hover:underline">
+                <a href="https://twitter.com/GameHub" className="flex items-center space-x-2 text-orange-600 hover:underline">
                   <FaTwitter /> <span>Twitter</span>
                 </a>
               </li>
@@ -79,7 +80,7 @@ const Footer = () => {
                 placeholder="yourname@domain.com"
                 className="px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white"
               />
-              <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500">
+              <button className="px-4 py-2 bg-orange-600 text-white rounded-md hover:bg-orange-500">
                 Subscribe
               </button>
             </form>

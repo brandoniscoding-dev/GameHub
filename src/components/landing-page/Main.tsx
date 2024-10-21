@@ -114,7 +114,7 @@ const Main: React.FC = () => {
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="max-w-7xl mx-auto text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-black dark:text-white">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-orange-500">
             Most Popular Games
           </h2>
           <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
@@ -137,16 +137,6 @@ const Main: React.FC = () => {
         </div>
       </section>
 
-      {/* Idle message */}
-      {isIdle && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg"
-        >
-          You've been idle for a while. Explore more!
-        </motion.div>
-      )}
       <Separator />
     </main>
   );

@@ -21,7 +21,7 @@ const GameCard: React.FC<GameCardProps> = ({ title, description, link, previewIm
       <img src={previewImage} alt={title} className="w-full h-40 object-cover rounded-md mb-4" />
       <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">{title}</h3>
       <p className="mt-2 text-gray-700 dark:text-gray-400">{description}</p>
-      <Link href={link} className="text-blue-500 mt-4 inline-block">
+      <Link href={link} className="text-orange-500 mt-4 inline-block">
         View Game
       </Link>
     </motion.div>

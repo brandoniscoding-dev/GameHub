@@ -19,7 +19,7 @@ const FAQAccordion: React.FC<{ faqs: FAQItemProps[] }> = ({ faqs }) => {
   return (
     <div className="flex flex-col md:flex-row justify-between mt-10 mx-5">
       <div className="md:w-1/3">
-        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-black dark:text-white text-left">
+        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-orange-500 text-left">
           Frequently Asked Questions
         </h2>
       </div>
