@@ -25,7 +25,7 @@ const mockUser = {
   avatarUrl: "path-to-avatar.jpg",  
 };
 
-const statut = true; 
+const statut = false; 
 
 export default function RootLayout({
   children,

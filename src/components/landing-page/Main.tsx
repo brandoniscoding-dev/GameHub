@@ -1,4 +1,3 @@
-// components/Main.tsx
 
 'use client';
 
@@ -8,7 +7,7 @@ import { useState, useEffect } from "react";
 import { Separator } from "@/components/ui/separator";
 import FeatureCard from "./FeatureCard";
 import GameCard from "./GameCard";
-import FAQAccordion from "./FAQAccordion"; // Importer le composant FAQAccordion
+import FAQAccordion from "./FAQAccordion"; 
 
 const Main: React.FC = () => {
   const [scrollY, setScrollY] = useState<number>(0);

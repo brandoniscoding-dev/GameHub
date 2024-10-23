@@ -8,7 +8,6 @@ const ThemeToggle: React.FC = () => {
   const [theme, setTheme] = useState<Theme>('system'); // Typage du state "theme"
   const [mounted, setMounted] = useState<boolean>(false); // Typage du state "mounted"
 
-  // Gérer le montage du composant pour éviter les problèmes SSR
   useEffect(() => {
     setMounted(true);
     const savedTheme = localStorage.getItem('theme') as Theme;
@@ -22,14 +21,13 @@ const ThemeToggle: React.FC = () => {
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
 
-    // Mettre à jour la classe HTML pour refléter le nouveau thème
     document.documentElement.classList.remove('light', 'dark');
     if (newTheme !== 'system') {
       document.documentElement.classList.add(newTheme);
     }
   };
 
-  if (!mounted) return null; // Attendre que le composant soit monté
+  if (!mounted) return null; 
 
   return (
     <div className="flex items-center justify-between p-2 bg-gray-100 dark:bg-gray-800 rounded-full w-36 shadow-md">
