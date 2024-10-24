@@ -9,7 +9,7 @@ const UserAvatar = ({ user }: { user: { name: string; avatarUrl: string } }) => 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
         >
-            <Avatar className="px-6 bg-orange-500 w-10 h-10 flex items-center justify-center rounded-full text-white" >
+            <Avatar className="px-6 bg-yellow-500 w-10 h-10 flex items-center justify-center rounded-full text-white" >
                 <AvatarImage src={user.avatarUrl} alt={user.name}/>
                 <AvatarFallback className="dark:text-white-500">
                     {user.name.charAt(0)}
