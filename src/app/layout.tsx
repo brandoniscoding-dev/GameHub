@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
+import { ThemeProvider } from "next-themes";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -37,9 +40,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* Injection de mockUser seulement si l'utilisateur est authentifié */}
-        <Header isAuthenticated={statut} user={statut ? mockUser : undefined} />
-        {children}
+        <ThemeProvider attribute="class">
+          <header>
+          <Header isAuthenticated={statut} user={statut ? mockUser : undefined} />
+          </header>
+          
+          {children}
+
+          <footer>
+            <Footer />
+          </footer>
+        </ThemeProvider>
+        
       </body>
     </html>
   );

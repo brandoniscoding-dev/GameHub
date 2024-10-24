@@ -1,11 +1,11 @@
-import Footer from "@/components/landing-page/Footer";
 import Main from "@/components/landing-page/Main";
 
 const Home = () => {
     return(
       <>
-        <Main />
-        <Footer />
+        <main>
+          <Main />
+        </main>     
       </>
     );
 }

@@ -10,7 +10,7 @@ import { BiUser } from 'react-icons/bi';
 
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import dynamic from 'next/dynamic';
-import logo from '../../src/public/img/gamehub.svg';
+import logo from '../app/img/gamehub.svg';
 
 const UserAvatar = dynamic(() => import('./UserAvatar'), { ssr: false });
 const JoinNowButton = dynamic(() => import('./JoinButton'), { ssr: false });
@@ -34,7 +34,7 @@ const NavLink = memo(({ href, children, icon }: NavLinkProps) => (
   >
     {icon}
     {children}
-    <span className="absolute left-0 -bottom-0.5 w-full h-0.5 bg-orange-500 transition-all duration-300 scale-x-0 group-hover:scale-x-100" />
+    <span className="absolute left-0 -bottom-0.5 w-full h-0.5 bg-yellow-500 transition-all duration-300 scale-x-0 group-hover:scale-x-100" />
   </motion.a>
 ));
 
